@@ -34,8 +34,8 @@ h1 {
 }
 h2 { /* Ou a classe que você usou para o "In Loving Memory" */
     padding: 0 20px;     /* Adiciona 20px de espaço nas laterais */
-    text-align: center;  /* Se quiser que o título também fique no meio */
-    margin-top: 30px;    /* Afasta um pouco das datas (2019-2026) */
+    text-align: absolute;  /* Se quiser que o título também fique no meio */
+    margin-top: -10px;    /* Afasta um pouco das datas (2019-2026) */
 }
 
 .datas {
@@ -136,24 +136,27 @@ audio:hover {
     .foto-principal {
     display: block;      /* Faz a imagem se comportar como um bloco */
     margin: 0 auto;      /* Mágica do CSS: centraliza horizontalmente */
-    width: 60%;          /* Tente 60% ou 150px para não ocupar a tela toda */
+    width: 30%;          /* Tente 60% ou 150px para não ocupar a tela toda */
     height: auto;
     position: static;    /* Isso tira ela de qualquer posição "fixa" no canto */
+    margin-top: -15px;
     }
 
     h1 {
         font-size: 2.8rem;
         margin: 10px 0 5px 0;
         position: static; /* Garante que o nome não flutue */
+        margin-top: -10px;
     }
 
     /* Agora as datas vão ficar logo abaixo do nome, centralizadas */
     .datas {
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #ccc; 
         margin-bottom: 30px;
-        position: static; 
-        display: block;
+        /*position: absolute;*/ 
+        left: 195px;
+        margin-top: -195px;
     }
 
     /* Melhora o texto da história para não ficar grudado nas bordas */
