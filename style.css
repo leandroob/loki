@@ -119,31 +119,41 @@ audio:hover {
 }
 
 @media (max-width: 600px) {
-    body {
-        padding: 20px;
-        text-align: center; /* Centraliza tudo no celular */
+    /* Organiza a seção do topo em coluna */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .foto-principal {
+        width: 150px; /* Ajusta o tamanho da foto no celular */
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 15px;
     }
 
     h1 {
-        font-size: 2.5rem; 
-        margin-top: 20px;
-        margin-bottom: 5px; /* Deixa o nome perto das datas */
-        position: relative; /* Garante que ele não flutue sobre o texto */
+        font-size: 2.8rem;
+        margin: 10px 0 5px 0;
+        position: static; /* Garante que o nome não flutue */
     }
 
-    /* Se você tiver uma classe ou ID para as datas, como .dates ou #datas */
-    .datas, .years, h2 { 
+    /* Agora as datas vão ficar logo abaixo do nome, centralizadas */
+    .datas {
         font-size: 1.2rem;
-        display: block;
+        color: #ccc; 
         margin-bottom: 30px;
-        position: static; /* Tira do canto e traz para o centro */
-        text-align: center;
+        position: static; 
+        display: block;
     }
 
+    /* Melhora o texto da história para não ficar grudado nas bordas */
     p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        text-align: left; /* O texto da história fica melhor alinhado à esquerda */
-        margin-top: 20px;
+        padding: 0 15px;
+        line-height: 1.7;
+        text-align: left;
     }
 }
