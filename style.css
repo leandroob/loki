@@ -117,3 +117,22 @@ audio {
 audio:hover {
     opacity: 1;     /* Quando você passa o mouse, ele fica nítido */
 }
+
+/* Ajustes para Celular */
+@media (max-width: 600px) {
+    body {
+        padding: 20px; /* Dá um respiro nas bordas */
+    }
+
+    h1 {
+        font-size: 3rem; /* Diminui um pouco o tamanho do nome Loki */
+        position: static; /* Tira ele de cima do texto se estiver sobreposto */
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: left; /* Melhora a leitura no celular */
+    }
+}
