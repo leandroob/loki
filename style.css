@@ -6,9 +6,11 @@
 
 body {
     background-color: #0a0a0a;
-    color: #ffffff;
+    color: #161616;
     font-family: 'Georgia', serif;
     overflow-x: hidden;
+    animation: slideshow 70s infinite ease-in-out;
+    transition: background-image 10s ease-in-out;
 
 }
 
@@ -25,7 +27,7 @@ h1 {
     font-size: 80px;
     font-weight: 300;
     letter-spacing: 1px;
-    color: #ffffff;
+    color: #0f0f0f;
 
     position: absolute;
     top: 300px;
@@ -43,13 +45,13 @@ h2 { /* Ou a classe que você usou para o "In Loving Memory" */
     top: 400px;
     left: 8%;
     transform: translateX(-50%);
-    color: #888888;
+    color: #0e0d0d;
 
 }
 
 .frase {
     font-size: 20px;
-    color: #cccccc;
+    color: #0e0d0d;
     position: absolute;
     top: 100px;
     left: 50%;
@@ -64,6 +66,7 @@ h2 { /* Ou a classe que você usou para o "In Loving Memory" */
     height: 325px;
     object-fit: cover;
     border-radius: 50%;
+    animation: surgimentoSuave 3s ease-out;
 
     position: absolute;
     top: -10px;
@@ -99,17 +102,56 @@ h2 { /* Ou a classe que você usou para o "In Loving Memory" */
 }
 
 @keyframes slideshow {
-    0%, 10%   { background-image: url('imagens/loki1.jpg'); }
-    11%, 21%  { background-image: url('imagens/loki2.jpg'); }
-    22%, 32%  { background-image: url('imagens/loki3.jpg'); }
-    33%, 43%  { background-image: url('imagens/loki4.jpg'); }
-    44%, 54%  { background-image: url('imagens/loki5.jpg'); }
-    55%, 65%  { background-image: url('imagens/loki6.jpg'); }
-    66%, 76%  { background-image: url('imagens/loki7.jpg'); }
-    77%, 87%  { background-image: url('imagens/loki8.jpg'); }
-    88%, 100% { background-image: url('imagens/loki9.jpg'); }
+    /* FOTO 1 */
+    0%, 9% { background-image: url('imagens/loki1.jpg'); opacity: 1; filter: blur(0); }
+    10% { opacity: 0; filter: blur(8px); } /* Suaviza antes de trocar */
 
+    /* FOTO 2 */
+    11%, 20% { background-image: url('imagens/loki2.jpg'); opacity: 1; filter: blur(0); }
+    21% { opacity: 0; filter: blur(8px); }
+
+    /* FOTO 3 */
+    22%, 31% { background-image: url('imagens/loki3.jpg'); opacity: 1; filter: blur(0); }
+    32% { opacity: 0; filter: blur(8px); }
+
+    /* FOTO 4 */
+    33%, 42% { background-image: url('imagens/loki4.jpg'); opacity: 1; filter: blur(0); }
+    43% { opacity: 0; filter: blur(8px); }
+
+    /* FOTO 5 */
+    44%, 53% { background-image: url('imagens/loki5.jpg'); opacity: 1; filter: blur(0); }
+    54% { opacity: 0; filter: blur(8px); }
+
+    /* FOTO 6 */
+    55%, 64% { background-image: url('imagens/loki6.jpg'); opacity: 1; filter: blur(0); }
+    65% { opacity: 0; filter: blur(8px); }
+
+    /* FOTO 7 */
+    66%, 75% { background-image: url('imagens/loki7.jpg'); opacity: 1; filter: blur(0); }
+    76% { opacity: 0; filter: blur(8px); }
+
+    /* FOTO 8 */
+    77%, 86% { background-image: url('imagens/loki8.jpg'); opacity: 1; filter: blur(0); }
+    87% { opacity: 0; filter: blur(8px); }
+
+    /* FOTO 9 */
+    88%, 97% { background-image: url('imagens/loki9.jpg'); opacity: 1; filter: blur(0); }
 }
+
+
+@keyframes surgimentoSuave {
+    from {
+        opacity: 1;
+        opacity: 0;
+        filter: blur(10px) grayscale(100%);
+        transform: translateY(20px);
+    }
+    to {
+        filter: blur(0) grayscale(0%);
+        transform: translateY(0);
+    }
+}
+
 audio {
     position: fixed;
     bottom: 15px;   /* Distância do fundo da tela */
@@ -125,6 +167,7 @@ audio:hover {
 
 @media (max-width: 600px) {
     /* Organiza a seção do topo em coluna */
+    
     .hero {
         display: flex;
         flex-direction: column;
@@ -140,6 +183,7 @@ audio:hover {
     height: auto;
     position: static;    /* Isso tira ela de qualquer posição "fixa" no canto */
     margin-top: -15px;
+    animation: surgimentoSuave 3s ease-out;
     }
 
     h1 {
@@ -152,7 +196,7 @@ audio:hover {
     /* Agora as datas vão ficar logo abaixo do nome, centralizadas */
     .datas {
         font-size: 1rem;
-        color: #ccc; 
+        color: #181717; 
         margin-bottom: 30px;
         /*position: absolute;*/ 
         left: 195px;
